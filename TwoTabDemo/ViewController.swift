@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var inputTextField: UITextField!
     
@@ -22,11 +22,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func textChanged(_ sender: UITextField) {
-        
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text! as NSString
+        let text = currentText.replacingCharacters(in: range, with: string)
         let model = DataModel.sharedModel
-        model.text = sender.text!
+        model.text = text
+        
+        return true
     }
+    
 
 }
 

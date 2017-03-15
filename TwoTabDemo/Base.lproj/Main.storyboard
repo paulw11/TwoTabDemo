@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Input-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TwoTabDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,24 +22,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgM-qk-W1n">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgM-qk-W1n">
                                 <rect key="frame" x="16" y="318.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="L68-1d-6B8"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Rlw-Ye-742"/>
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xgM-qk-W1n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KrG-w0-JhV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xgM-qk-W1n" secondAttribute="trailing" id="ack-L1-jKU"/>
                             <constraint firstItem="xgM-qk-W1n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lpX-hf-9eZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ow2-NX-fWa"/>
+                    <tabBarItem key="tabBarItem" title="Input" id="ow2-NX-fWa" userLabel="Input"/>
                     <connections>
                         <outlet property="inputTextField" destination="xgM-qk-W1n" id="e69-Go-re8"/>
                     </connections>
@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--Item-->
+        <!--Output-->
         <scene sceneID="bPH-G4-yx3">
             <objects>
                 <viewController id="OfK-mZ-PgQ" customClass="DestinationViewController" customModule="TwoTabDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,21 +60,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCF-Dm-1Ah">
-                                <rect key="frame" x="16" y="333.5" width="343" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCF-Dm-1Ah">
+                                <rect key="frame" x="16" y="323" width="343" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="miH-Rk-apR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.47843137250000001" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KCF-Dm-1Ah" firstAttribute="leading" secondItem="hRY-Yg-oFu" secondAttribute="leadingMargin" id="5Wl-7N-GRi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KCF-Dm-1Ah" secondAttribute="trailing" id="SwI-jl-PMo"/>
                             <constraint firstItem="KCF-Dm-1Ah" firstAttribute="centerY" secondItem="hRY-Yg-oFu" secondAttribute="centerY" id="YRk-tT-p1Z"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4YQ-XN-8pD"/>
+                    <tabBarItem key="tabBarItem" title="Output" id="4YQ-XN-8pD" userLabel="Output"/>
                     <connections>
                         <outlet property="destinationLabel" destination="KCF-Dm-1Ah" id="EsA-8h-kBQ"/>
                     </connections>
